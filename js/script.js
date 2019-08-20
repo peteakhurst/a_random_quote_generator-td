@@ -6,6 +6,17 @@ project 1 - A Random Quote Generator
 // Study guide for this project - https://drive.google.com/file/d/1s5grutGuQFwJcQP8bFwEI69Q8FCkGdDk/view?usp=sharing
 
 
+// QUOTES FROM BASEBALL MOVIES 
+
+// It's supposed to be hard. If it wasn't hard, everyone would do it. The hard is what makes it great. - Jimmy Dugan - A League of Their Own
+// There's no crying in baseball!! - Jimmy Dugan - A League of Their Own 
+// If you build it, he will come. - Shoeless Joe Jackson - Field of Dreams 
+// You're killin' me Smalls! - Hamilton "Ham" Porter - The Sandlot Kids 
+// Maybe tomorrow we’ll all wear 42 - Ralph Branca - 42 
+ 
+ 
+
+
 /*** 
   Create the array of quote objects and name it `quotes`.
   Add at least five quote objects to the `quotes` array.
@@ -15,6 +26,32 @@ project 1 - A Random Quote Generator
   Use console.log() to log your array of quotes to the console.
 ***/
 
+let quotes = [
+  {
+  quote: "It's supposed to be hard. If it wasn't hard, everyone would do it. The hard is what makes it great.",
+  source: "Jimmy Dugan",
+  citation: "A League of Their Own",
+  year: 1997
+  },
+  {
+    quote: "There's no crying in baseball!!",
+    source: "A League of Their Own"
+  },
+  {
+    quote: "If you build it, he will come.",
+    source: "Field of Dreams"
+  },
+  {
+    quote: "You're killin me smalls!",
+    source: "Hamilton 'Ham' Porter"
+  },
+  {
+    quote: "Maybe tomorrow we'll all wear 42",
+    source: "Ralph Branca"
+  }
+];
+
+console.log(quotes);
 
 
 
@@ -23,6 +60,13 @@ project 1 - A Random Quote Generator
    - Create a variable to store a random number 
    - Cse the random number to `return` a random quote object from the `quotes` array.
 ***/
+
+function getRandomQuote() {
+
+  return Math.floor(Math.random() * 6);
+}
+
+console.log(getRandomQuote());
 
 
 
