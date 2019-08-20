@@ -32,30 +32,35 @@ let quotes = [
   source: "A League of Their Own",
   citation: "Jimmy Dugan",
   year: 1997,
+  tags: ["sport", "comedy", "baseball"]
   },
   {
     quote: "There's no crying in baseball!!",
     source: "A League of Their Own",
     citation: "Jimmy Dugan",
-    year: 1997
+    year: 1997,
+    tags: ["sport", "comedy", "baseball"]
   },
   {
     quote: "If you build it, he will come.",
     source: "A Field of Dreams",
     citation: "Shoeless Joe Jackson",
-    year: 1989
+    year: 1989,
+    tags: ["sport", "comedy", "baseball"]
   },
   {
     quote: "You're killin me smalls!",
     source: "The Sandlot",
     citation: "Hamilton 'Ham' Porter",
-    year: 1993
+    year: 1993,
+    tags: ["sport", "comedy", "baseball"]
   },
   {
     quote: "Maybe tomorrow we'll all wear 42",
     source: "42",
     citation: "Ralp Branca",
-    year: 2013
+    year: 2013,
+    tags: ["sport", "comedy", "baseball"]
   }
 ];
 
@@ -111,19 +116,44 @@ function printQuote() {
     HTML += "<span class='year'> " + randomQuote.year + "</span></p>";
   }
 
+  if(randomQuote.tags) {
+    HTML += "<p>Tags: <span class='tags'> " + randomQuote.tags.join(" | ") +"</span>"; 
+  }
+
   console.log(HTML);
 
   var div = document.getElementById('quote-box');
   div.innerHTML = HTML;
+  
+  var red = randomBackgroundColor();
+  var green = randomBackgroundColor();
+  var blue = randomBackgroundColor();
+
+  var rgbColor = 'rgb(' + red + ',' + green + ',' + blue + ')';
+  
+  document.body.style.backgroundColor = rgbColor;
+
 }
 
 printQuote();
 
+// set interval 
+setInterval(function() { 
+  printQuote(); 
+}, 5000);
 
 
 
 
 
+
+
+
+// Create random background color function 
+
+function randomBackgroundColor() {
+  return Math.floor(Math.random() * 256);
+}
 
 /***
   When the "Show another quote" button is clicked, the event listener 
