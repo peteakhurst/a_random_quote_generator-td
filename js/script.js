@@ -29,26 +29,33 @@ project 1 - A Random Quote Generator
 let quotes = [
   {
   quote: "It's supposed to be hard. If it wasn't hard, everyone would do it. The hard is what makes it great.",
-  source: "Jimmy Dugan",
-  citation: "A League of Their Own",
+  source: "A League of Their Own",
+  citation: "Jimmy Dugan",
   year: 1997,
-  imgSrc: "https://unsplash.it/800"
   },
   {
     quote: "There's no crying in baseball!!",
-    source: "A League of Their Own"
+    source: "A League of Their Own",
+    citation: "Jimmy Dugan",
+    year: 1997
   },
   {
     quote: "If you build it, he will come.",
-    source: "Field of Dreams"
+    source: "A Field of Dreams",
+    citation: "Shoeless Joe Jackson",
+    year: 1989
   },
   {
     quote: "You're killin me smalls!",
-    source: "Sandlot Kids"
+    source: "The Sandlot",
+    citation: "Hamilton 'Ham' Porter",
+    year: 1993
   },
   {
     quote: "Maybe tomorrow we'll all wear 42",
-    source: "42"
+    source: "42",
+    citation: "Ralp Branca",
+    year: 2013
   }
 ];
 
@@ -94,7 +101,7 @@ function printQuote() {
   
   HTML += "<p class='quote'> " + randomQuote.quote;
   HTML += "<p class='source'> " + randomQuote.source;
-  // HTML += "<img src='" + randomQuote.imgSrc + "' >"; 
+  
 
   if(randomQuote.citation){
     HTML += "<span class='citation'> " + randomQuote.citation + "</span>";
