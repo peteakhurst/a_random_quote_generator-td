@@ -31,7 +31,8 @@ let quotes = [
   quote: "It's supposed to be hard. If it wasn't hard, everyone would do it. The hard is what makes it great.",
   source: "Jimmy Dugan",
   citation: "A League of Their Own",
-  year: 1997
+  year: 1997,
+  imgSrc: "https://unsplash.it/800"
   },
   {
     quote: "There's no crying in baseball!!",
@@ -43,11 +44,11 @@ let quotes = [
   },
   {
     quote: "You're killin me smalls!",
-    source: "Hamilton 'Ham' Porter"
+    source: "Sandlot Kids"
   },
   {
     quote: "Maybe tomorrow we'll all wear 42",
-    source: "Ralph Branca"
+    source: "42"
   }
 ];
 
@@ -63,7 +64,8 @@ console.log(quotes);
 
 function getRandomQuote() {
 
-  return Math.floor(Math.random() * 6);
+  let randomQuoteIndex = Math.floor(Math.random() * quotes.length); // gets my random quote index from the quotes object literal
+  return quotes[randomQuoteIndex];
 }
 
 console.log(getRandomQuote());
@@ -76,13 +78,42 @@ console.log(getRandomQuote());
    - Call the `getRandomQuote` function and assign it to a variable.
    - Create a variable for the HTML string and set it equal to an empty string.
    - Use the HTML template in the instructions or the markup in the index.html file, AND 
-     the random quote vairable to build your HTML string.
+     the random quote variable to build your HTML string.
    - Add the quote and source section to the HTML string.
    - Use an if statement to check for the citation property before adding it to the HTML string.
    - Use an if statement to check for the year property before adding it to the HTML string.
    - Don't forget to close that final `p` tag.
    - Set the `innerHTML` of the `quote-box` div to the HTML string. 
 ***/
+
+function printQuote() {
+
+  let randomQuote = getRandomQuote();
+  let HTML = " "; 
+
+  
+  HTML += "<p class='quote'> " + randomQuote.quote;
+  HTML += "<p class='source'> " + randomQuote.source;
+  // HTML += "<img src='" + randomQuote.imgSrc + "' >"; 
+
+  if(randomQuote.citation){
+    HTML += "<span class='citation'> " + randomQuote.citation + "</span>";
+  }
+
+  if(randomQuote.year){
+    HTML += "<span class='year'> " + randomQuote.year + "</span></p>";
+  }
+
+  console.log(HTML);
+
+  var div = document.getElementById('quote-box');
+  div.innerHTML = HTML;
+}
+
+printQuote();
+
+
+
 
 
 
